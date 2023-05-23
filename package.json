@@ -1,23 +1,24 @@
 {
-  "name": "root",
-  "version": "1.0.0",
-  "description": "The purpose of this project is to test the performance of happy-dom",
-  "main": "index.js",
-  "scripts": {
-    "test": "node ./lib/jsdom.test.js && node ./lib/happy-dom.test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/capricorn86/happy-dom-performance-test.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/capricorn86/happy-dom-performance-test/issues"
-  },
-  "homepage": "https://github.com/capricorn86/happy-dom-performance-test#readme",
-  "dependencies": {
-    "happy-dom": "^1.5.0",
-    "jsdom": "^16.4.0"
-  }
+    "name": "root",
+    "version": "1.0.0",
+    "description": "The purpose of this project is to test the performance of happy-dom",
+    "main": "index.js",
+    "scripts": {
+        "test": "node ./lib/jsdom.test.js && node ./lib/happy-dom.test.js",
+        "test:debug": "node ./lib/jsdom.test.js && node --inspect-brk ./lib/happy-dom.test.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/capricorn86/happy-dom-performance-test.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/capricorn86/happy-dom-performance-test/issues"
+    },
+    "homepage": "https://github.com/capricorn86/happy-dom-performance-test#readme",
+    "dependencies": {
+        "happy-dom": "9.20.3",
+        "jsdom": "22.0.0"
+    }
 }
