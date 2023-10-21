@@ -18,7 +18,7 @@
     },
     "homepage": "https://github.com/capricorn86/happy-dom-performance-test#readme",
     "dependencies": {
-        "happy-dom": "9.20.3",
-        "jsdom": "22.0.0"
+        "happy-dom": "12.9.1",
+        "jsdom": "22.1.0"
     }
 }
