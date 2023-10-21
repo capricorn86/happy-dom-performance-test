@@ -4,8 +4,8 @@
     "description": "The purpose of this project is to test the performance of happy-dom",
     "main": "index.js",
     "scripts": {
-        "test": "node ./lib/jsdom.test.js && node ./lib/happy-dom.test.js",
-        "test:debug": "node ./lib/jsdom.test.js && node --inspect-brk ./lib/happy-dom.test.js"
+        "test": "node ./lib/jsdom.test.js && node ./lib/happy-dom.test.js && node ./lib/linkedom.test.js",
+        "test:debug": "node ./lib/jsdom.test.js && node --inspect-brk ./lib/happy-dom.test.js && node ./lib/linkedom.test.js"
     },
     "repository": {
         "type": "git",
@@ -18,7 +18,8 @@
     },
     "homepage": "https://github.com/capricorn86/happy-dom-performance-test#readme",
     "dependencies": {
-        "happy-dom": "9.20.3",
-        "jsdom": "22.0.0"
+        "happy-dom": "12.9.1",
+        "jsdom": "22.1.0",
+        "linkedom": "^0.15.6"
     }
 }
