@@ -1,38 +1,46 @@
+interface AttributeChange {
+	name: string;
+	oldValue: string | null;
+	newValue: string | null;
+}
+
 /**
- * CustomElement test class.
+ * CustomElement test class factory.
+ * Must be called with an HTMLElement base class.
  */
-class CustomElement extends HTMLElement {
-	changedAttributes = [];
+export default function createCustomElement(HTMLElement: any) {
+	return class CustomElement extends HTMLElement {
+		changedAttributes: AttributeChange[] = [];
 
-	/**
-	 * Returns a list of observed attributes.
-	 *
-	 * @return Observered attributes.
-	 */
-	static get observedAttributes() {
-		return ['key1', 'key2'];
-	}
+		/**
+		 * Returns a list of observed attributes.
+		 *
+		 * @return Observered attributes.
+		 */
+		static get observedAttributes() {
+			return ['key1', 'key2'];
+		}
 
-	/**
-	 * Constructor.
-	 */
-	constructor() {
-		super();
-		this.attachShadow({ mode: 'open' });
-	}
+		/**
+		 * Constructor.
+		 */
+		constructor() {
+			super();
+			(this as any).attachShadow({ mode: 'open' });
+		}
 
-	/**
-	 * @override
-	 */
-	attributeChangedCallback(name, oldValue, newValue) {
-		this.changedAttributes.push({ name, oldValue, newValue });
-	}
+		/**
+		 * @override
+		 */
+		attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null) {
+			this.changedAttributes.push({ name, oldValue, newValue });
+		}
 
-	/**
-	 * @override
-	 */
-	connectedCallback() {
-		this.shadowRoot.innerHTML = `
+		/**
+		 * @override
+		 */
+		connectedCallback() {
+			(this as any).shadowRoot.innerHTML = `
             <style>
                 :host {
                     display: block;
@@ -69,7 +77,6 @@ class CustomElement extends HTMLElement {
                 </span>
             </div>
         `;
-	}
+		}
+	};
 }
-
-module.exports = CustomElement;
