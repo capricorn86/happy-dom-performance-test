@@ -1,11 +1,20 @@
 {
-    "name": "root",
-    "version": "1.0.0",
-    "description": "The purpose of this project is to test the performance of happy-dom",
-    "main": "index.js",
+    "name": "happy-dom-jsdom-benchmark",
+    "version": "2.0.0",
+    "description": "Comprehensive performance benchmarks comparing Happy DOM and JSDOM",
+    "type": "module",
+    "main": "lib/benchmark.ts",
     "scripts": {
-        "test": "node ./lib/jsdom.test.js && node ./lib/happy-dom.test.js",
-        "test:debug": "node ./lib/jsdom.test.js && node --inspect-brk ./lib/happy-dom.test.js"
+        "bench": "node lib/benchmark.ts",
+        "bench:happy-dom": "node lib/benchmark.ts --library=happy-dom",
+        "bench:jsdom": "node lib/benchmark.ts --library=jsdom",
+        "bench:local": "node lib/benchmark.ts --use-local",
+        "bench:compare": "node lib/benchmark.ts --compare",
+        "typecheck": "tsc --noEmit",
+        "test": "node lib/benchmark.ts"
+    },
+    "engines": {
+        "node": ">=24.11.0"
     },
     "repository": {
         "type": "git",
@@ -18,7 +27,12 @@
     },
     "homepage": "https://github.com/capricorn86/happy-dom-performance-test#readme",
     "dependencies": {
-        "happy-dom": "9.20.3",
-        "jsdom": "22.0.0"
+        "happy-dom": "^15.7.4",
+        "jsdom": "^25.0.1"
+    },
+    "devDependencies": {
+        "@types/jsdom": "^21.1.7",
+        "@types/node": "^22.9.0",
+        "typescript": "^5.6.3"
     }
 }
